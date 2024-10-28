@@ -1,4 +1,5 @@
 import {slug} from '../components/slug'
+import {textField} from '../components/textField' // Se till att denna sökväg är korrekt
 
 export default {
   name: 'indexPage', // Unikt namn för schemat
@@ -12,13 +13,7 @@ export default {
       type: 'string', // Typ av data för fältet
       description: 'Titel för startsidan', // Beskrivning för användarna
     },
-    {
-      name: 'content', // Namn på fältet
-      title: 'Content', // Titel för fältet i Studio
-      type: 'array', // Typ av data, en array av block (rich text editor)
-      of: [{type: 'block'}],
-      description: 'Innehåll för startsidan',
-    },
+    textField('content', 'Content'), // Använd textField-komponenten här
     {
       name: 'image', // Namn på fältet
       title: 'Image', // Titel i Studio
